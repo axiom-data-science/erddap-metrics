@@ -1,0 +1,5 @@
+---
+
+erddap_regions:
+  - name: testing
+    base_url: 'https://testing.erddap.com/erddap'

@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>ERDDAP - Status</title>
+<link rel="shortcut icon" href="http://erddap.aoos.org/erddap/images/favicon.ico">
+<link href="http://erddap.aoos.org/erddap/images/erddap2.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<table class="compact nowrap" style="width:100%; background-color:#128CB5;">
+  <tr>
+    <td style="text-align:center; width:80px;"><a rel="bookmark"
+      href="http://www.noaa.gov/"><img
+      title="National Oceanic and Atmospheric Administration"
+      src="http://erddap.aoos.org/erddap/images/noaab.png" alt="NOAA"
+      style="vertical-align:middle;"></a></td>
+    <td style="text-align:left; font-size:x-large; color:#FFFFFF; ">
+      <strong>ERDDAP</strong>
+      <br><small><small><small>Easier access to scientific data</small></small></small>
+      </td>
+    <td style="text-align:right; font-size:small;">
+       &nbsp; &nbsp;
+      <br>Brought to you by
+      <a title="National Oceanic and Atmospheric Administration" rel="bookmark"
+      href="http://www.noaa.gov">NOAA</a>
+      <a title="National Marine Fisheries Service" rel="bookmark"
+      href="http://www.nmfs.noaa.gov">NMFS</a>
+      <a title="Southwest Fisheries Science Center" rel="bookmark"
+      href="https://swfsc.noaa.gov">SWFSC</a>
+      <a title="Environmental Research Division" rel="bookmark"
+      href="https://swfsc.noaa.gov/textblock.aspx?Division=ERD&amp;id=1315&amp;ParentMenuId=200">ERD</a>
+      &nbsp; &nbsp;
+      </td>
+  </tr>
+</table>
+<!-- Big HTML tooltips are generated with wz_tooltip from
+    http://wztip.info/index.php/Main_Page (LGPL license) -->
+<script src="/erddap/images/wz_tooltip.js"></script>
+
+<div class="standard_width">
+
+<h1 class="nowrap"><a title="Click here to return to the ERDDAP home page."
+rel="start" href="http://erddap.aoos.org/erddap/index.html">ERDDAP</a> &gt; Status</h1>
+<pre>Current time is 2019-07-22T20:20:17+00:00
+Startup was at  2019-07-21T04:00:34+00:00
+Last major LoadDatasets started 4m 18s ago and finished after 5 seconds.
+nGridDatasets  = 2
+nTableDatasets = 2044
+nTotalDatasets = 2046
+n Datasets Failed To Load (in the last major LoadDatasets) = 6
+    edu_ccu_lbos_2nd_ave_pier, edu_ccu_lbos_apache, edu_ccu_lbos_cherry_grove, gov_fl_fldep_8728732,
+    gov_fl_fldep_8728703, gov_fl_fldep_8722375, (end)
+ERROR: Duplicate datasetIDs in datasets.xml:
+    edu_fit_sipf1
+Response Failed    Time (since last major LoadDatasets) n =        0
+Response Failed    Time (since last Daily Report)       n =        1
+Response Failed    Time (since startup)                 n =        0
+Response Succeeded Time (since last major LoadDatasets) n =       32,  median ~=        0 ms
+Response Succeeded Time (since last Daily Report)       n =     8389,  median ~=        1 ms
+Response Succeeded Time (since startup)                 n =    28631,  median ~=        0 ms
+TaskThread has finished 0 out of 0 tasks.  Currently, no task is running.
+TaskThread Failed    Time (since last Daily Report)     n =        0
+TaskThread Failed    Time (since startup)               n =        0
+TaskThread Succeeded Time (since last Daily Report)     n =        0
+TaskThread Succeeded Time (since startup)               n =        0
+Number of threads: Tomcat-waiting=19, inotify=12, other=19
+MemoryInUse=   137 MB (highWaterMark=   940 MB) (Xmx ~= 3959 MB)
+
+Major LoadDatasets Time Series: MLD    Datasets Loaded    Requests (medianTime in seconds)     Number of Threads      Memory (MB)
+  timestamp                    time   nTry nFail nTotal  nSuccess (median) nFailed (median)  tomWait inotify other  inUse highWater
+  2019-07-22T20:16:00+00:00      1s      0     0   2046        83 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T20:01:04+00:00      5s    402     0   2046       125 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T19:46:04+00:00      5s    165     0   2046       278 (     0)       0 (     0)       20      12    20    124       940
+  2019-07-22T19:31:00+00:00      1s      0     0   2046       210 (     0)       0 (     0)       20      12    19    119       940
+  2019-07-22T19:15:59+00:00      1s      0     0   2046       146 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T19:00:59+00:00      1s      0     0   2046        66 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T18:46:11+00:00     13s   1216     0   2046       101 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T18:31:01+00:00      3s    249     0   2046       233 (     0)       0 (     0)       20      12    20    124       940
+  2019-07-22T18:15:59+00:00      1s      0     0   2046       127 (     0)       0 (     0)       20      12    19    116       940
+  2019-07-22T18:01:03+00:00      5s    402     0   2046       167 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T17:46:00+00:00      2s    165     0   2046       123 (     0)       0 (     0)       20      12    20    125       940
+  2019-07-22T17:30:58+00:00      1s      0     0   2046       343 (     0)       0 (     0)       20      12    19    116       940
+  2019-07-22T17:15:58+00:00      1s      0     0   2046       323 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T17:00:58+00:00      1s      0     0   2046       306 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T16:46:10+00:00     13s   1216     0   2046       364 (     0)       0 (     0)       20      12    20    132       940
+  2019-07-22T16:31:00+00:00      3s    249     0   2046       253 (     0)       0 (     0)       20      12    20    123       940
+  2019-07-22T16:16:02+00:00      5s      1     0   2046       326 (     0)       0 (     0)       20      12    20    123       940
+  2019-07-22T16:00:57+00:00      1s      2     0   2046       279 (     0)       0 (     0)       20      12    20    114       940
+  2019-07-22T15:46:07+00:00     11s    565     0   2046       212 (     0)       0 (     0)       20      12    20    128       940
+  2019-07-22T15:30:57+00:00      1s      0     0   2046       238 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T15:15:57+00:00      1s      0     0   2046       246 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T15:00:57+00:00      1s      0     0   2046       297 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T14:45:57+00:00      1s      0     0   2046       245 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T14:31:16+00:00     21s   1465     0   2046       294 (     0)       0 (     0)       20      12    20    132       940
+  2019-07-22T14:15:56+00:00      1s      0     0   2046       184 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T14:00:56+00:00      1s      2     0   2046       121 (     0)       0 (     0)       20      12    20    114       940
+  2019-07-22T13:46:02+00:00      7s    565     0   2046        88 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T13:30:56+00:00      1s      0     0   2046        90 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T13:15:56+00:00      1s      0     0   2046       151 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-22T13:00:55+00:00      1s      0     0   2046        72 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T12:45:55+00:00      1s      0     0   2046        62 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T12:31:10+00:00     16s   1465     0   2046        63 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T12:15:55+00:00      1s      0     0   2046        71 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T12:00:55+00:00      1s      2     0   2046        59 (     0)       0 (     0)       20      12    20    115       940
+  2019-07-22T11:46:01+00:00      7s    565     0   2046        74 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T11:30:55+00:00      1s      0     0   2046        63 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T11:15:55+00:00      1s      0     0   2046        77 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T11:00:54+00:00      1s      0     0   2046        63 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T10:45:54+00:00      1s      0     0   2046        59 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T10:31:09+00:00     15s   1465     0   2046        62 (     0)       0 (     0)       20      12    20    132       940
+  2019-07-22T10:15:58+00:00      5s      1     0   2046        54 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T10:00:54+00:00      1s      2     0   2046        67 (     0)       0 (     0)       20      12    20    114       940
+  2019-07-22T09:46:00+00:00      7s    565     0   2046        77 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T09:30:54+00:00      1s      0     0   2046        57 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T09:15:53+00:00      1s      0     0   2046        73 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T09:00:53+00:00      1s      0     0   2046        71 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T08:45:53+00:00      1s      0     0   2046       173 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T08:31:09+00:00     16s   1465     0   2046        86 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T08:15:53+00:00      1s      0     0   2046        62 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T08:00:53+00:00      1s      2     0   2046        76 (     0)       0 (     0)       20      12    20    114       940
+  2019-07-22T07:45:59+00:00      7s    565     0   2046       199 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T07:30:52+00:00      1s      0     0   2046       139 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T07:15:52+00:00      1s      0     0   2046       481 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T07:00:52+00:00      1s      0     0   2046        63 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-22T06:45:52+00:00      1s      0     0   2046      1075 (     0)       0 (     0)       20      12    19    112       940
+  2019-07-22T06:31:07+00:00     16s   1465     0   2046       454 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T06:15:52+00:00      1s      0     0   2046       547 (     0)       0 (     0)       20      12    19    116       940
+  2019-07-22T06:00:52+00:00      1s      2     0   2046      1675 (     0)       0 (     0)       20      12    20    113       940
+  2019-07-22T05:45:57+00:00      7s    565     0   2046       144 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T05:30:51+00:00      1s      0     0   2046        80 (     0)       0 (     0)       20      12    19    116       940
+  2019-07-22T05:15:51+00:00      1s      0     0   2046      1071 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T05:00:51+00:00      1s      0     0   2046       541 (     0)       0 (     0)       20      12    19    116       940
+  2019-07-22T04:45:51+00:00      1s      0     0   2046        61 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T04:31:06+00:00     16s   1465     0   2046        58 (     0)       0 (     0)       20      12    20    132       940
+  2019-07-22T04:15:54+00:00      4s      1     0   2046       318 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T04:00:51+00:00      1s      2     0   2046      1029 (     0)       0 (     0)       20      12    20    128       940
+  2019-07-22T03:45:56+00:00      7s    565     0   2044       799 (     0)       0 (     0)       20      12    20    130       940
+  2019-07-22T03:30:50+00:00      1s      0     0   2044       303 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T03:15:50+00:00      1s      0     0   2044       217 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T03:00:50+00:00      1s      0     0   2044       414 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T02:45:50+00:00      1s      0     0   2044       177 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T02:31:05+00:00     16s   1465     0   2044        75 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T02:15:49+00:00      1s      0     0   2044       124 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T02:00:49+00:00      1s      0     0   2044       171 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T01:45:55+00:00      7s    565     0   2044       182 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-22T01:30:49+00:00      1s      0     0   2044       131 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T01:15:49+00:00      1s      0     0   2044       143 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-22T01:00:49+00:00      1s      0     0   2044       175 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-22T00:45:49+00:00      1s      0     0   2044       120 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-22T00:31:03+00:00     16s   1465     0   2044       168 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-22T00:15:48+00:00      1s      0     0   2044        84 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-22T00:00:48+00:00      1s      0     0   2044        64 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-21T23:45:54+00:00      7s    565     0   2044        63 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-21T23:30:48+00:00      1s      0     0   2044        62 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-21T23:15:48+00:00      1s      0     0   2044        76 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-21T23:00:47+00:00      1s      0     0   2044        61 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-21T22:45:47+00:00      1s      0     0   2044        72 (     0)       0 (     0)       20      12    19    115       940
+  2019-07-21T22:31:03+00:00     16s   1465     0   2044        76 (     0)       0 (     0)       20      12    20    132       940
+  2019-07-21T22:15:51+00:00      4s      1     0   2044        76 (     0)       0 (     0)       20      12    20    126       940
+  2019-07-21T22:00:47+00:00      1s      0     0   2044        71 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-21T21:45:53+00:00      7s    565     0   2044        63 (     0)       0 (     0)       20      12    20    127       940
+  2019-07-21T21:30:47+00:00      1s      0     0   2044        58 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-21T21:15:47+00:00      1s      0     0   2044       156 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-21T21:00:46+00:00      1s      0     0   2044       243 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-21T20:45:46+00:00      1s      0     0   2044       201 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-21T20:31:01+00:00     16s   1465     0   2044       157 (     0)       0 (     0)       20      12    20    131       940
+  2019-07-21T20:15:46+00:00      1s      0     0   2044       108 (     0)       0 (     0)       20      12    19    114       940
+  2019-07-21T20:00:46+00:00      1s      0     0   2044       243 (     0)       0 (     0)       20      12    19    113       940
+  2019-07-21T19:45:52+00:00      7s    565     0   2044       153 (     0)       0 (     0)       20      12    20    126       940
+  2019-07-21T19:30:45+00:00      1s      0     0   2044       100 (     0)       0 (     0)       20      12    19    112       940
+
+
+Major LoadDatasets Times Distribution (since last Daily Report):
+    n =       53,  median ~=      179 ms
+    0 ms:               0
+    1 ms:               0
+    2 ms:               0
+    &lt;= 5 ms:            0
+    &lt;= 10 ms:           0
+    &lt;= 20 ms:           0
+    &lt;= 50 ms:           0
+    &lt;= 100 ms:          2
+    &lt;= 200 ms:         31
+    &lt;= 500 ms:          1
+    &lt;= 1 s:             0
+    &lt;= 2 s:             1
+    &lt;= 5 s:             7
+    &lt;= 10 s:            4
+    &lt;= 20 s:            6
+    &lt;= 1 min:           1
+    &lt;= 2 min:           0
+    &lt;= 5 min:           0
+    &lt;= 10 min:          0
+    &lt;= 20 min:          0
+    &lt;= 1 hr:            0
+    &gt;  1 hr:            0
+
+Major LoadDatasets Times Distribution (since startup):
+    n =      162,  median ~=      173 ms
+    0 ms:               0
+    1 ms:               0
+    2 ms:               0
+    &lt;= 5 ms:            0
+    &lt;= 10 ms:           0
+    &lt;= 20 ms:           0
+    &lt;= 50 ms:           0
+    &lt;= 100 ms:          3
+    &lt;= 200 ms:        107
+    &lt;= 500 ms:          2
+    &lt;= 1 s:             2
+    &lt;= 2 s:             1
+    &lt;= 5 s:             9
+    &lt;= 10 s:           17
+    &lt;= 20 s:           19
+    &lt;= 1 min:           2
+    &lt;= 2 min:           0
+    &lt;= 5 min:           0
+    &lt;= 10 min:          0
+    &lt;= 20 min:          0
+    &lt;= 1 hr:            0
+    &gt;  1 hr:            0
+
+
+Minor LoadDatasets Times Distribution (since last Daily Report):
+    n =        0
+
+Minor LoadDatasets Times Distribution (since startup):
+    n =        0
+
+
+Response Failed Time Distribution (since last major LoadDatasets):
+    n =        0
+
+Response Failed Time Distribution (since last Daily Report):
+    n =        0
+
+Response Failed Time Distribution (since startup):
+    n =        0
+
+
+Response Succeeded Time Distribution (since last major LoadDatasets):
+    n =       32,  median ~=        0 ms
+    0 ms:              14
+    1 ms:               8
+    2 ms:               2
+    &lt;= 5 ms:            1
+    &lt;= 10 ms:           7
+    &lt;= 20 ms:           0
+    &lt;= 50 ms:           0
+    &lt;= 100 ms:          0
+    &lt;= 200 ms:          0
+    &lt;= 500 ms:          0
+    &lt;= 1 s:             0
+    &lt;= 2 s:             0
+    &lt;= 5 s:             0
+    &lt;= 10 s:            0
+    &lt;= 20 s:            0
+    &lt;= 1 min:           0
+    &lt;= 2 min:           0
+    &lt;= 5 min:           0
+    &lt;= 10 min:          0
+    &lt;= 20 min:          0
+    &lt;= 1 hr:            0
+    &gt;  1 hr:            0
+
+Response Succeeded Time Distribution (since last Daily Report):
+    n =     8389,  median ~=        1 ms
+    0 ms:            3158
+    1 ms:            1555
+    2 ms:             496
+    &lt;= 5 ms:         1632
+    &lt;= 10 ms:        1378
+    &lt;= 20 ms:          77
+    &lt;= 50 ms:          39
+    &lt;= 100 ms:         47
+    &lt;= 200 ms:          7
+    &lt;= 500 ms:          0
+    &lt;= 1 s:             0
+    &lt;= 2 s:             0
+    &lt;= 5 s:             0
+    &lt;= 10 s:            0
+    &lt;= 20 s:            0
+    &lt;= 1 min:           0
+    &lt;= 2 min:           0
+    &lt;= 5 min:           0
+    &lt;= 10 min:          0
+    &lt;= 20 min:          0
+    &lt;= 1 hr:            0
+    &gt;  1 hr:            0
+
+Response Succeeded Time Distribution (since startup):
+    n =    28631,  median ~=        0 ms
+    0 ms:           13300
+    1 ms:            5156
+    2 ms:             984
+    &lt;= 5 ms:         3052
+    &lt;= 10 ms:        5467
+    &lt;= 20 ms:         394
+    &lt;= 50 ms:         149
+    &lt;= 100 ms:        103
+    &lt;= 200 ms:         20
+    &lt;= 500 ms:          1
+    &lt;= 1 s:             0
+    &lt;= 2 s:             1
+    &lt;= 5 s:             2
+    &lt;= 10 s:            2
+    &lt;= 20 s:            0
+    &lt;= 1 min:           0
+    &lt;= 2 min:           0
+    &lt;= 5 min:           0
+    &lt;= 10 min:          0
+    &lt;= 20 min:          0
+    &lt;= 1 hr:            0
+    &gt;  1 hr:            0
+
+
+TaskThread Failed Time Distribution (since last Daily Report):
+    n =        0
+
+TaskThread Failed Time Distribution (since startup):
+    n =        0
+
+TaskThread Succeeded Time Distribution (since last Daily Report):
+    n =        0
+
+TaskThread Succeeded Time Distribution (since startup):
+    n =        0
+
+
+SgtMap topography nFromCache=0 nNotFromCache=0
+GSHHS: nCached=0 of 100, nCoarse=0, nSuccesses=0, nTossed=0
+NationalBoundaries: nCached=0 of 100,  nCoarse=0, nSuccesses=0, nTossed=0
+StateBoundaries: nCached=0 of 100,  nCoarse=0, nSuccesses=0, nTossed=0
+Rivers: nCached=0 of 100,  nCoarse=0, nSuccesses=0, nTossed=0
+bufferedImage isAccelerated=[unknown]
+
+Number of threads: Tomcat-waiting=19, inotify=12, other=19
+(format: #threadNumber Thread[threadName,threadPriority,threadGroup] threadStatus)
+
+#1 Thread[ajp-nio-8009-Acceptor-0,5,main] RUNNABLE daemon
+sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422)
+sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250)
+org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:482)
+java.lang.Thread.run(Thread.java:748)
+
+#2 Thread[ajp-nio-8009-AsyncTimeout,5,main] TIMED_WAITING daemon
+java.lang.Thread.sleep(Native Method)
+org.apache.coyote.AbstractProtocol$AsyncTimeout.run(AbstractProtocol.java:1149)
+java.lang.Thread.run(Thread.java:748)
+
+#3 Thread[ajp-nio-8009-ClientPoller-0,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+java.lang.Thread.run(Thread.java:748)
+
+#4 Thread[ajp-nio-8009-ClientPoller-1,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+java.lang.Thread.run(Thread.java:748)
+
+#5 Thread[AsyncFileHandlerWriter-1523554304,5,main] TIMED_WAITING daemon
+sun.misc.Unsafe.park(Native Method)
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+java.util.concurrent.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:522)
+java.util.concurrent.LinkedBlockingDeque.poll(LinkedBlockingDeque.java:684)
+org.apache.juli.AsyncFileHandler$LoggerThread.run(AsyncFileHandler.java:160)
+
+#6 Thread[ContainerBackgroundProcessor[StandardEngine[Catalina]],5,main] TIMED_WAITING daemon
+java.lang.Thread.sleep(Native Method)
+org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1359)
+java.lang.Thread.run(Thread.java:748)
+
+#7 Thread[Finalizer,8,system] WAITING daemon
+java.lang.Object.wait(Native Method)
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+#8 Thread[GC Daemon,2,system] TIMED_WAITING daemon
+java.lang.Object.wait(Native Method)
+sun.misc.GC$Daemon.run(GC.java:117)
+
+#9 Thread[http-nio-8080-Acceptor-0,5,main] RUNNABLE daemon
+sun.nio.ch.ServerSocketChannelImpl.accept0(Native Method)
+sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:422)
+sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:250)
+org.apache.tomcat.util.net.NioEndpoint$Acceptor.run(NioEndpoint.java:482)
+java.lang.Thread.run(Thread.java:748)
+
+#10 Thread[http-nio-8080-AsyncTimeout,5,main] TIMED_WAITING daemon
+java.lang.Thread.sleep(Native Method)
+org.apache.coyote.AbstractProtocol$AsyncTimeout.run(AbstractProtocol.java:1149)
+java.lang.Thread.run(Thread.java:748)
+
+#11 Thread[http-nio-8080-ClientPoller-0,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+java.lang.Thread.run(Thread.java:748)
+
+#12 Thread[http-nio-8080-ClientPoller-1,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioEndpoint$Poller.run(NioEndpoint.java:825)
+java.lang.Thread.run(Thread.java:748)
+
+#13 Thread[Java2D Disposer,10,system] WAITING daemon
+java.lang.Object.wait(Native Method)
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+sun.java2d.Disposer.run(Disposer.java:148)
+java.lang.Thread.run(Thread.java:748)
+
+#14 Thread[main,5,main] RUNNABLE
+java.net.PlainSocketImpl.socketAccept(Native Method)
+java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)
+java.net.ServerSocket.implAccept(ServerSocket.java:545)
+java.net.ServerSocket.accept(ServerSocket.java:513)
+org.apache.catalina.core.StandardServer.await(StandardServer.java:466)
+org.apache.catalina.startup.Catalina.await(Catalina.java:775)
+org.apache.catalina.startup.Catalina.start(Catalina.java:721)
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+java.lang.reflect.Method.invoke(Method.java:498)
+org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:353)
+org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:493)
+
+#15 Thread[NioBlockingSelector.BlockPoller-1,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioBlockingSelector$BlockPoller.run(NioBlockingSelector.java:298)
+
+#16 Thread[NioBlockingSelector.BlockPoller-2,5,main] RUNNABLE daemon
+sun.nio.ch.EPollArrayWrapper.epollWait(Native Method)
+sun.nio.ch.EPollArrayWrapper.poll(EPollArrayWrapper.java:269)
+sun.nio.ch.EPollSelectorImpl.doSelect(EPollSelectorImpl.java:93)
+sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+org.apache.tomcat.util.net.NioBlockingSelector$BlockPoller.run(NioBlockingSelector.java:298)
+
+#17 Thread[Reference Handler,10,system] WAITING daemon
+java.lang.Object.wait(Native Method)
+java.lang.Object.wait(Object.java:502)
+java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+#18 Thread[RunLoadDatasets,5,main] TIMED_WAITING daemon
+java.lang.Thread.sleep(Native Method)
+gov.noaa.pfel.erddap.RunLoadDatasets.run(RunLoadDatasets.java:282)
+
+#19 Thread[Signal Dispatcher,9,system] RUNNABLE daemon
+
+</pre>
+</div>
+<div class="standard_width">
+<br>&nbsp;
+<hr>
+ERDDAP, Version 1.82_axiom-r1
+<br><a rel="license" href="http://erddap.aoos.org/erddap/legal.html">Disclaimers</a> |
+    <a rel="bookmark" href="http://erddap.aoos.org/erddap/legal.html#privacyPolicy">Privacy Policy</a> |
+    <a rel="bookmark" href="http://erddap.aoos.org/erddap/legal.html#contact">Contact</a>
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+</div>
+</body>
+</html>

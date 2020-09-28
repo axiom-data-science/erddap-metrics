@@ -1,0 +1,9 @@
+---
+
+erddap_regions:
+  - name: standards
+    base_url: 'https://standards.sensors.ioos.us/erddap'
+  - name: sensormap
+    base_url: 'http://erddap.sensors.ioos.us/erddap'
+
+refresh_interval_mins: 5

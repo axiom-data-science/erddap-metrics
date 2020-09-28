@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>ERDDAP - Home Page</title>
+<link rel="shortcut icon" href="http://testing.erddap.axds.co/erddap/images/favicon.ico">
+<link href="http://testing.erddap.axds.co/erddap/images/erddap2.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<table class="compact nowrap" style="width:100%; background-color:#128CB5;">
+  <tr>
+    <td style="text-align:center; width:80px;"><a rel="bookmark"
+      href="http://www.noaa.gov/"><img
+      title="National Oceanic and Atmospheric Administration"
+      src="http://testing.erddap.axds.co/erddap/images/noaab.png" alt="NOAA"
+      style="vertical-align:middle;"></a></td>
+    <td style="text-align:left; font-size:x-large; color:#FFFFFF; ">
+      <strong>ERDDAP</strong>
+      <br><small><small><small>Easier access to scientific data</small></small></small>
+      </td>
+    <td style="text-align:right; font-size:small;">
+       &nbsp; &nbsp;
+      <br>Brought to you by
+      <a title="National Oceanic and Atmospheric Administration" rel="bookmark"
+      href="http://www.noaa.gov">NOAA</a>
+      <a title="National Marine Fisheries Service" rel="bookmark"
+      href="http://www.nmfs.noaa.gov">NMFS</a>
+      <a title="Southwest Fisheries Science Center" rel="bookmark"
+      href="https://swfsc.noaa.gov">SWFSC</a>
+      <a title="Environmental Research Division" rel="bookmark"
+      href="https://swfsc.noaa.gov/textblock.aspx?Division=ERD&amp;id=1315&amp;ParentMenuId=200">ERD</a>
+      &nbsp; &nbsp;
+      </td>
+  </tr>
+</table>
+<!-- Big HTML tooltips are generated with wz_tooltip from 
+    http://wztip.info/index.php/Main_Page (LGPL license) -->
+<script src="http://testing.erddap.axds.co/erddap/images/wz_tooltip.js"></script>
+
+<div class="wide_max_width"><table style="vertical-align:top; width:100%; border:0; border-spacing:0px;">
+<tr>
+<td style="width:60%;" class="T">
+<h1>ERDDAP</h1>
+ERDDAP (the Environmental Research Division's Data Access Program)
+is a data server that gives you a simple, consistent way to download
+subsets of scientific datasets in common file formats and make graphs and maps.
+This particular ERDDAP installation has oceanographic data
+(for example, data from satellites and buoys).
+
+<h2>Easier Access to Scientific Data</h2>
+Our focus is on making it easier for you to get scientific data.
+
+<p><strong>Different scientific communities have developed different types of data servers.</strong>
+<p>For example, OPeNDAP, WCS, SOS, OBIS, and countless custom web pages with forms.
+Each is great on its own.
+But without ERDDAP, it is difficult to get data from different types of servers:
+<ul>
+<li>Different data servers make you format your data request in different ways.
+<li>Different data servers return data in different formats, usually not the common file format that you want.
+<li>Different datasets use different formats for time data, so the results are hard to compare.
+</ul>
+
+<!-- We believe that by focusing on your needs, ERDDAP can make it easier to get data.
+make it easier for you to get scientific data.-->
+
+<p><strong>ERDDAP unifies the different types of data servers
+  so you have a consistent way to get the data you want, in the format you want.</strong>
+<ul>
+<li>ERDDAP acts as a middleman between you and various remote data servers.
+  When you request data from ERDDAP,
+    ERDDAP reformats the request into the format required by the remote server,
+    sends the request to the remote server, gets the data, reformats the data into the
+    format that you requested, and sends the data to you.
+    You no longer have to go to different data servers to get data from different datasets.
+  <br>&nbsp;
+
+<li>ERDDAP offers an easy-to-use, consistent way to request data: via the OPeNDAP standard.
+Many datasets can also be accessed via ERDDAP's Web Map Service (WMS).
+  <br>&nbsp;
+
+<li>ERDDAP returns data in the common file format of your choice.
+  ERDDAP offers all data as .html table, ESRI .asc and .csv, Google Earth .kml, 
+    OPeNDAP binary, .mat, .nc, ODV .txt, .csv, .tsv, .json, and .xhtml.
+    So you no longer have to waste time and effort reformatting data.
+  <br>&nbsp;
+
+<li>ERDDAP can also return a .png or .pdf image with a customized graph or map.
+  <br>&nbsp;
+
+<li>ERDDAP standardizes the dates+times in the results.
+  Data from other data servers is hard to compare
+    because the dates+times often are expressed in different formats
+    (for example, "Jan 2, 2018", 02-JAN-2018, 1/2/18, 2/1/18,
+    2018-01-02, "days since Jan 1, 1900").
+  For string times, ERDDAP always uses the ISO 8601:2004(E) standard format,
+    for example, 2018-01-02T00:00:00Z.
+  For numeric times, ERDDAP always uses "seconds since 1970-01-01T00:00:00Z".
+  ERDDAP always uses the Zulu (UTC, GMT) time zone to remove the difficulties
+    of working with different time zones and standard time versus daylight saving time.
+  
+  <br>&nbsp;
+
+<li>ERDDAP has web pages (for humans with browsers) and 
+     <a rel="help" href="http://testing.erddap.axds.co/erddap/rest.html">RESTful&nbsp;web&nbsp;services</a> 
+     (for computer programs).
+  You can bypass ERDDAP's web pages and use ERDDAP's RESTful web services 
+    (for example, for searching for datasets, for downloading data, for making maps)
+    directly from any computer program (for example, Matlab, R, or a program that you write)
+    and even from web pages (via HTML image tags or JavaScript).  
+  You can also build other useful and interesting things on top of ERDDAP's web services
+  &mdash; see the 
+  <a rel="bookmark" href="https://github.com/IrishMarineInstitute/awesome-erddap">Awesome ERDDAP<img 
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)" 
+    title="This link to an external website does not constitute an endorsement."></a>
+    list of awesome ERDDAP-related projects.
+</ul>
+
+<p><strong><a rel="help" href="https://www.youtube.com/watch?v=18xZoXu1USM">For a quick introduction to ERDDAP,
+  watch the first half of this  
+  <img style="vertical-align:middle" alt="YouTube" src="http://testing.erddap.axds.co/erddap/images/youtube.png" >
+  video<img 
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)" 
+    title="This link to an external website does not constitute an endorsement."></a>.</strong> 
+    <a class="selfLink" id="video" href="#video" rel="help">(5 minutes)</a>
+In it, a scientist downloads ocean currents forecast data from ERDDAP to model a toxic
+  spill in the ocean using  
+  <a rel="bookmark" href="https://response.restoration.noaa.gov/oil-and-chemical-spills/oil-spills/response-tools/gnome.html">NOAA's GNOME software<img 
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)" 
+    title="This link to an external website does not constitute an endorsement."></a> (in 5 minutes!).
+  Thanks to Rich Signell. (One tiny error in the video: 
+  when searching for datasets, don't use <kbd>AND</kbd> between search terms. It is implicit.)
+
+<p><a rel="help" href="http://testing.erddap.axds.co/erddap/information.html"><strong>Find out more about ERDDAP.</strong></a>
+
+<p><strong>Data Providers: You can
+  <a rel="help" href="https://coastwatch.pfeg.noaa.gov/erddap/download/setup.html">set up your own ERDDAP server</a>
+  and serve your own data.</strong>
+ERDDAP is free and open source. It uses Apache-like licenses, 
+so you can do anything you want with it.
+ERDDAP's appearance is customizable, so your ERDDAP will reflect your institution, not NOAA. 
+The small effort to set up ERDDAP brings many benefits.
+If you already have a web service for distributing your data,
+you can set up ERDDAP to access your data via the existing service
+or via the source files or database.
+Then, people will have another way to access your data
+and will be able to download the data in additional file formats
+or as graphs or maps.
+ERDDAP has been installed by over 60 organizations worldwide.
+<a rel="bookmark"
+href="https://geo-ide.noaa.gov/wiki/index.php?title=Data_Access_Technical_Recommendations#Software_implementations">NOAA's Data Access Procedural Directive<img 
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)" 
+    title="This link to an external website does not constitute an endorsement."></a> 
+includes ERDDAP in its list of recommended data servers for use by groups within NOAA.</td>
+<td style="width:1%;">&nbsp;&nbsp;&nbsp;</td>
+<td style="width:1%;" class="verticalLine">&nbsp;&nbsp;&nbsp;</td>
+<td style="width:38%;" class="T">
+<h2><span class="standoutColor">Start Using ERDDAP:<br>&nbsp;&nbsp;&nbsp;&nbsp;Search for Interesting Datasets</span></h2>
+<ul>
+<li><form name="search" method="GET"
+  action="http&#x3a;&#x2f;&#x2f;testing&#x2e;erddap&#x2e;axds&#x2e;co&#x2f;erddap&#x2f;search&#x2f;index&#x2e;html"  >
+<h3>Do a Full Text Search for Datasets</h3><input type="hidden" name="page" value="1" >
+<input type="hidden" name="itemsPerPage" value="1000" >
+<input type="text" name="searchFor" value=""
+  title="Like&#x20;Google&#x20;search&#x2c;&#x20;enter&#x20;space&#x2d;separated&#x20;word&#x28;s&#x29;&#x2c;&#x20;for&#x20;example&#x2c;&#x20;&#x22;noaa&#x20;wind&#x22;&#x2e;" 
+  size="40" maxlength="255"  ><img src="http&#x3a;&#x2f;&#x2f;testing&#x2e;erddap&#x2e;axds&#x2e;co&#x2f;erddap&#x2f;images&#x2f;QuestionMark&#x2e;jpg" alt="&#x3f;" onmouseover="Tip('<div class=&quot;standard_max_width&quot;><strong>Search Hints</strong><ul><li>This is a Google-like search of the datasets\&#39; metadata:&nbsp;&nbsp;Type the words you want to search for, with spaces between the words.&nbsp;&nbsp;ERDDAP will search for the words separately, not as a phrase. <li>To search for a phrase, put double quotes around the phrase (for example, <kbd>&quot;wind speed&quot;</kbd>). <li>To exclude datasets with a specific word, use <kbd>-<i>excludedWord</i></kbd> . To exclude datasets with a specific phrase, use <kbd>-&quot;<i>excluded phrase</i>&quot;</kbd> . <li>Don\&#39;t use <kbd>AND</kbd> between search terms. It is implied. The results will include only the datasets that have all of the specified words and phrases (and none of the excluded words and phrases) in the dataset\&#39;s metadata (data about the dataset). <li>Searches are not case-sensitive. <li>To find just grid or just table datasets, include <kbd>protocol=griddap</kbd> or <kbd>protocol=tabledap</kbd> in your search. <li>This ERDDAP is using searchEngine=original. <li>In this ERDDAP, you can search for any part of a word. For example, searching for <kbd>spee</kbd> will find datasets with <kbd>speed</kbd> and datasets with <kbd>WindSpeed</kbd>. <li>In this ERDDAP, the last word in a phrase may be a partial word. For&nbsp;&nbsp;example, to find datasets from a specific website (usually the start of the datasetID), include (for example) <kbd>&quot;datasetID=<i>erd</i>&quot;</kbd> in your search. </ul></div>')" onmouseout="UnTip()"  >
+<button type="submit" 
+  title="Click&#x20;here&#x20;to&#x20;submit&#x20;your&#x20;search&#x20;request&#x2e;"  >Search</button>
+
+</form>
+
+<li><h3><a rel="contents" href="http://testing.erddap.axds.co/erddap/info/index.html?page=1&#x26;itemsPerPage=1000">View a List of All 0 Datasets</a></h3>
+
+<li><h3>Search for Datasets by Category</h3>
+Datasets can be categorized in different ways by the values of various metadata attributes.
+Click on an attribute
+(<a href="http://testing.erddap.axds.co/erddap/categorize/cdm_data_type/index.html?page=1&amp;itemsPerPage=1000">cdm_data_type</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/institution/index.html?page=1&amp;itemsPerPage=1000">institution</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/ioos_category/index.html?page=1&amp;itemsPerPage=1000">ioos_category</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/keywords/index.html?page=1&amp;itemsPerPage=1000">keywords</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/long_name/index.html?page=1&amp;itemsPerPage=1000">long_name</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/standard_name/index.html?page=1&amp;itemsPerPage=1000">standard_name</a>, 
+<a href="http://testing.erddap.axds.co/erddap/categorize/variableName/index.html?page=1&amp;itemsPerPage=1000">variableName</a>) to see a list of categories (values) for that attribute.
+Then, you can click on a category to see a list of relevant datasets.
+
+<li><h3>Search for Datasets with <span class="N"><a href="http&#x3a;&#x2f;&#x2f;testing&#x2e;erddap&#x2e;axds&#x2e;co&#x2f;erddap&#x2f;search&#x2f;advanced&#x2e;html&#x3f;page&#x3d;1&#x26;itemsPerPage&#x3d;1000">Advanced&nbsp;Search</a>&nbsp;<img src="http&#x3a;&#x2f;&#x2f;testing&#x2e;erddap&#x2e;axds&#x2e;co&#x2f;erddap&#x2f;images&#x2f;QuestionMark&#x2e;jpg" alt="&#x3f;" onmouseover="Tip('<div class=&quot;narrow_max_width&quot;>Advanced Search combines all of the search techniques and adds searches for datasets that have data within longitude, latitude, and time ranges, so you can search for datasets based on many different criteria simultaneously.</div>')" onmouseout="UnTip()"  >
+</span></h3>
+
+<li><h3>Search for Datasets by Protocol</h3>
+Protocols are the standards which specify how to request data.
+  Different protocols are appropriate for different types of data and for different client applications.<br>&nbsp;
+<table class="erd commonBGColor">
+  <tr><th>Protocol</th><th>Description</th></tr>
+  <tr>
+    <td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/griddap/index.html?page=1&#x26;itemsPerPage=1000" title="Click to see a list of datasets available via the griddap protocol.">griddap<br>datasets</a> </td>
+    <td>Griddap lets you use the OPeNDAP hyperslab protocol to request data subsets, graphs, and maps from gridded datasets (for example, satellite data and climate model data).
+      <a rel="help" href="http://testing.erddap.axds.co/erddap/griddap/documentation.html">griddap&nbsp;documentation</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/tabledap/index.html?page=1&#x26;itemsPerPage=1000" title="Click to see a list of datasets available via the tabledap protocol.">tabledap<br>datasets</a></td>
+    <td>Tabledap lets you use the OPeNDAP constraint/selection protocol to request data subsets, graphs, and maps from tabular datasets (for example, buoy data).
+      <a rel="help" href="http://testing.erddap.axds.co/erddap/tabledap/documentation.html">tabledap&nbsp;documentation</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/files/" title="Click to see a list of datasets available via the files protocol.">"files"<br>datasets</a></td>
+    <td>ERDDAP's "files" system lets you browse a virtual file system and download source data files. WARNING! The dataset's metadata and variable names in these source files may be different 
+than elsewhere in ERDDAP! 
+You might prefer using the dataset's Data Access Form instead.
+      <a rel="help" href="http://testing.erddap.axds.co/erddap/files/documentation.html">"files"&nbsp;documentation</a>
+    </td>
+  </tr>
+  <tr>
+    <td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/wms/index.html?page=1&#x26;itemsPerPage=1000" title="Click to see a list of datasets available via the WMS protocol.">WMS<br>datasets</a></td>
+    <td>The Web Map Service (WMS) lets you request an image with data plotted on a map.
+      <a rel="help" href="http://testing.erddap.axds.co/erddap/wms/documentation.html">WMS&nbsp;documentation</a>
+    </td>
+  </tr>
+</table>
+&nbsp;
+
+<li><h3>Developers of computer programs and JavaScripted web pages 
+can search for datasets via</h3>
+  <ul>
+  <li><a rel="help" href="http://testing.erddap.axds.co/erddap/rest.html">ERDDAP's RESTful search services</a>
+  <li><a rel="help" href="http://testing.erddap.axds.co/erddap/tabledap/allDatasets.html">ERDDAP's allDatasets tabular dataset that has a row of information for each dataset</a>
+  <li><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/opensearch1.1/index.html">ERDDAP's OpenSearch 1.1 Service</a>
+  </ul>
+
+
+</ul>
+<p>&nbsp;<hr>
+<p><strong><a class="selfLink" id="metadata" href="#metadata" rel="bookmark">Metadata</a></strong>
+<br>ERDDAP has an <br><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/metadata/fgdc/xml/">FGDC&nbsp;Web&nbsp;Accessible&nbsp;Folder&nbsp;(WAF)</a>
+with <a rel="help" href="https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/base-metadata/index_html"
+>FGDC&#8209;STD&#8209;001&#8209;1998<img
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)"
+    title="This link to an external website does not constitute an endorsement."></a> metadata files and an <br><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/metadata/iso19115/xml/">ISO&nbsp;19115&nbsp;Web&nbsp;Accessible&nbsp;Folder&nbsp;(WAF)</a>
+with <a rel="help" href="https://en.wikipedia.org/wiki/Geospatial_metadata"
+>ISO&nbsp;19115&#8209;2/19139<img
+    src="http://testing.erddap.axds.co/erddap/images/external.png" alt=" (external link)"
+    title="This link to an external website does not constitute an endorsement."></a> metadata files for all of the geospatial datasets in this ERDDAP.
+
+<p><strong><a class="selfLink" id="services" href="#services" rel="bookmark">RESTful Web Services</a></strong>
+<br>You can bypass ERDDAP's web pages and use ERDDAP's RESTful web services 
+(for example, for searching for datasets, for downloading data, for making maps)
+directly from any computer program (for example, Matlab, R, or a program that you write)
+and even from web pages (via HTML image tags or JavaScript).  
+<a rel="help" href="http://testing.erddap.axds.co/erddap/rest.html">REST documentation</a>
+
+<p><strong><a class="selfLink" id="and" href="#and" rel="bookmark">And</a></strong>
+<table class="erd commonBGColor">
+<tr><td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/status.html">Status</a></td>
+    <td>The Status web page is a quick way to check the current status/health
+of this ERDDAP, including a list of datasets which failed to load.</td></tr>
+<tr><td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/outOfDateDatasets.html">Out-Of-Date Datasets</a></td>
+    <td>The Out-Of-Date Datasets web page displays a list of near-real-time datasets, ranked by how out-of-date they are.</td></tr>
+<tr><td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/slidesorter.html">Slide Sorter</a></td>
+    <td>Anyone can use ERDDAP's Slide Sorter
+to build a personal web page that displays graphs
+with the latest data (or other images or HTML content), each in its own, draggable slide.</td></tr>
+<tr><td><a rel="bookmark" href="http://testing.erddap.axds.co/erddap/dataProviderForm.html">Data Provider Form</a></td>
+    <td>The Data Provider Form is for people who have data and want it to be served by this ERDDAP.
+      It collects basic information about the dataset and emails it to this ERDDAP's administrator.</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="standard_width">
+<br>&nbsp;
+<hr>
+ERDDAP, Version 2.02_axiom-r1
+<br><a rel="license" href="http://testing.erddap.axds.co/erddap/legal.html">Disclaimers</a> |
+    <a rel="bookmark" href="http://testing.erddap.axds.co/erddap/legal.html#privacyPolicy">Privacy Policy</a> |
+    <a rel="bookmark" href="http://testing.erddap.axds.co/erddap/legal.html#contact">Contact</a>
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+<p>&nbsp;
+</div>
+</body>
+</html>
