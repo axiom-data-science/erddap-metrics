@@ -79,5 +79,5 @@ docker run --rm --name erddap-metrics \
 * Add LICENSE
 * Travis-CI pipeline
 * Publish to Docker Hub
-* Filipe review
+* Compare to [ioos-python-package-skeleton](https://github.com/ioos/ioos-python-package-skeleton) / Filipe review
 * Expose list of regions via rest api
