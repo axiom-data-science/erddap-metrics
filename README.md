@@ -14,7 +14,7 @@ The results are available via a REST API so you can integrate it into custom das
 
 ## Tutorial: setting up erddap-metrics with Prometheus and Grafana
 
-See tutorial in the wiki: [Tutorial: setting up erddap-metrics with Prometheus and Grafana](https://github.com/axiom-data-science/erddap-metrics/wiki)
+See tutorial in the docs: [Tutorial: setting up erddap-metrics with Prometheus and Grafana](https://github.com/axiom-data-science/erddap-metrics/docs)
 
 ## Running locally
 
