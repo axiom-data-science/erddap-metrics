@@ -1,5 +1,7 @@
 # erddap-metrics
 
+[![Build Status](https://travis-ci.com/axiom-data-science/erddap-metrics.svg?branch=master)](https://travis-ci.com/axiom-data-science/erddap-metrics)
+
 Provides ERDDAP metrics and status, via a REST API and Prometheus metrics endpoint.
 
 ## How it works
