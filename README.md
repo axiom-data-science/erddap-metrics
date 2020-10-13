@@ -35,13 +35,13 @@ cp settings.yml.example settings.yml
 Conda env:
 ```
 # create
-conda create -y -c conda-forge  -n erddap_metrics python=3.8 --file requirements.txt --file requirements-test.txt
+conda create -y -c conda-forge  -n erddap_metrics python=3.8 --file requirements.txt --file requirements-dev.txt
 
 # enable
 source activate erddap_metrics
 
 # update
-conda install -y -c conda-forge  --file requirements.txt --file requirements-test.txt
+conda install -y -c conda-forge  --file requirements.txt --file requirements-dev.txt
 ```
 
 Run with:
@@ -76,7 +76,6 @@ docker run --rm --name erddap-metrics \
 
 # TODOs
 
-* Travis-CI pipeline
 * Publish to Docker Hub
-* Compare to [ioos-python-package-skeleton](https://github.com/ioos/ioos-python-package-skeleton) / Filipe review
+* Filipe review
 * Expose list of regions via rest api

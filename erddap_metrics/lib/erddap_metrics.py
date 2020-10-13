@@ -70,7 +70,7 @@ class ErddapMetrics(metaclass=Singleton):
         for region in self.regions_list:
             try:
                 metrics.extend(self._metrics_for_region(region))
-            except Exception as e:
+            except Exception:
                 logging.error(f"Could not load metrics for '{region['name']}'!")
                 metrics.append(status_metric(region['name'], GaugeBool.DOWN))
         self.metrics = metrics

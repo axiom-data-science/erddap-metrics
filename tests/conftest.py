@@ -14,6 +14,7 @@ def mocked_responses():
     with responses.RequestsMock(assert_all_requests_are_fired=False) as rsps:
         yield rsps
 
+
 @pytest.fixture
 def erddap_server_metrics():
     erddap_metrics = ErddapMetrics(settings_file='tests/test_settings.yml', skip_scheduling=True)
