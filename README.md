@@ -76,7 +76,6 @@ docker run --rm --name erddap-metrics \
 
 # TODOs
 
-* Add LICENSE
 * Travis-CI pipeline
 * Publish to Docker Hub
 * Compare to [ioos-python-package-skeleton](https://github.com/ioos/ioos-python-package-skeleton) / Filipe review
