@@ -78,6 +78,9 @@ docker run --rm --name erddap-metrics \
 
 # TODOs
 
-* Publish to Docker Hub
-* Filipe review
-* Expose list of regions via rest api
+* Dev
+  * Publish to Docker Hub
+  * Get someone to review it
+* Features
+  * Expose list of regions via rest api
+  * Per-dataset metrics (time since last data point, etc)
