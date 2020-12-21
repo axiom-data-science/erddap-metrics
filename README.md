@@ -4,6 +4,23 @@
 
 Provides ERDDAP metrics and status, via a REST API and Prometheus metrics endpoint.
 
+## Quickstart
+
+```
+# get settings.yml template
+wget "https://raw.githubusercontent.com/axiom-data-science/erddap-metrics/master/settings.yml.example" -O settings.yml
+# edit as needed
+
+# pull and run via docker
+docker pull axiom/erddap-metrics:latest
+docker run --rm --name erddap-metrics \
+   -p 9102:9102  \
+   -v $(pwd)/settings.yml:/app/settings.yml \
+ erddap-metrics gunicorn --bind '0.0.0.0:9102' --workers 1 erddap_metrics.api.run:__hug_wsgi__
+
+# then open a browser to http://localhost:9102/
+```
+
 ## How it works
 
 A process runs periodically and scrapes the `/status.html` for each ERDDAP server, and publishes the results.
@@ -79,8 +96,7 @@ docker run --rm --name erddap-metrics \
 # TODOs
 
 * Dev
-  * Publish to Docker Hub
-  * Get someone to review it
+  * External review
 * Features
   * Expose list of regions via rest api
   * Per-dataset metrics (time since last data point, etc)
