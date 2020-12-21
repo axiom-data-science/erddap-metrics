@@ -3,3 +3,4 @@
 erddap_regions:
   - name: testing
     base_url: 'https://testing.erddap.com/erddap'
+    disable_dataset_metrics: true

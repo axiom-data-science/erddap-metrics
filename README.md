@@ -23,7 +23,8 @@ docker run --rm --name erddap-metrics \
 
 ## How it works
 
-A process runs periodically and scrapes the `/status.html` for each ERDDAP server, and publishes the results.
+A process runs periodically and scrapes information from `/status.html` (and optionally the All Datasets dataset)
+for each ERDDAP server, and publishes the results.
 
 You can configure a single metrics instance that inspects multiple ERDDAP servers.
 
@@ -99,4 +100,3 @@ docker run --rm --name erddap-metrics \
   * External review
 * Features
   * Expose list of regions via rest api
-  * Per-dataset metrics (time since last data point, etc)
