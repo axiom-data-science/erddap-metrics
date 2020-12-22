@@ -171,7 +171,7 @@ class ErddapMetrics(metaclass=Singleton):
             except ValueError:
                 logger.debug(f"Failed to parse {d}")
                 continue
-            seconds_since_last_data_point = (now - last_data_point_time).total_seconds()
+            seconds_since_last_data_point = int((now - last_data_point_time).total_seconds())
             if seconds_since_last_data_point < realtime_threshold:
                 metrics.append(ErddapGauge('erddap_dataset_time_since_latest_data',
                                            'Number of seconds since the latest available data point for this dataset',

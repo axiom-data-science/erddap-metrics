@@ -112,7 +112,7 @@ def test_dataset_metrics_for_region(erddap_server_metrics, mocked_responses, moc
     # last data pt: 2020-12-21T17:30:00Z
     # current time: 2020-12-21T18:41:00Z
     # 71 minutes / 4260 seconds
-    assert 4260.0 == humboldt_metric.metric_value
+    assert 4260 == humboldt_metric.metric_value
 
 
 def _assert_value(metrics, name, expected_value):
