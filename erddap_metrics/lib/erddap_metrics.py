@@ -52,10 +52,14 @@ class ErddapMetrics(metaclass=Singleton):
         # the list of ERDDAP servers to track
         self.regions_list = cfg['erddap_regions']
         for r in self.regions_list:
-            if 'disable_dataset_metrics' not in r:
-                r['disable_dataset_metrics'] = False
+            if 'enable_dataset_metrics' not in r:
+                r['enable_dataset_metrics'] = False
             else:
-                r['disable_dataset_metrics'] = str2bool(r['disable_dataset_metrics'])
+                r['enable_dataset_metrics'] = str2bool(r['enable_dataset_metrics'])
+            if 'dataset_metrics_max_age_seconds' not in r:
+                r['dataset_metrics_max_age_seconds'] = 7 * 24 * 60 * 60  # 7 days
+            else:
+                r['dataset_metrics_max_age_seconds'] = int(r['dataset_metrics_max_age_seconds'])
         logger.info(f"REGIONS: {self.regions_list}")
 
         self.metrics = []
@@ -80,10 +84,10 @@ class ErddapMetrics(metaclass=Singleton):
         for region in self.regions_list:
             try:
                 metrics.extend(self._metrics_for_region(region))
-                if not region['disable_dataset_metrics']:
+                if region['enable_dataset_metrics']:
                     metrics.extend(self._dataset_metrics_for_region(region))
             except Exception:
-                logger.error(f"Could not load metrics for '{region['name']}'!")
+                logger.exception(f"Could not load metrics for '{region['name']}'!")
                 metrics.append(status_metric(region['name'], GaugeBool.DOWN))
         self.metrics = metrics
 
@@ -150,6 +154,8 @@ class ErddapMetrics(metaclass=Singleton):
     def _dataset_metrics_for_region(self, region) -> List[ErddapGauge]:
         metrics = []
 
+        realtime_threshold = region['dataset_metrics_max_age_seconds']
+
         region_name = region['name']
         logger.debug(f"Updating dataset metrics for {region_name}")
 
@@ -166,10 +172,11 @@ class ErddapMetrics(metaclass=Singleton):
                 logger.debug(f"Failed to parse {d}")
                 continue
             seconds_since_last_data_point = (now - last_data_point_time).total_seconds()
-            metrics.append(ErddapGauge('erddap_dataset_time_since_latest_data',
-                                       'Number of seconds since the latest available data point for this dataset',
-                                       region_name,
-                                       seconds_since_last_data_point,
-                                       dataset_id=dataset_id))
+            if seconds_since_last_data_point < realtime_threshold:
+                metrics.append(ErddapGauge('erddap_dataset_time_since_latest_data',
+                                           'Number of seconds since the latest available data point for this dataset',
+                                           region_name,
+                                           seconds_since_last_data_point,
+                                           dataset_id=dataset_id))
 
         return metrics

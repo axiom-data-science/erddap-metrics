@@ -3,7 +3,10 @@
 erddap_regions:
   - name: standards
     base_url: 'https://standards.sensors.ioos.us/erddap'
+    enable_dataset_metrics: false
   - name: sensormap
     base_url: 'http://erddap.sensors.ioos.us/erddap'
+    enable_dataset_metrics: true
+    dataset_metrics_max_age_seconds: 21600
 
 refresh_interval_mins: 5

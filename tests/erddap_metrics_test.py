@@ -103,7 +103,8 @@ def test_dataset_metrics_for_region(erddap_server_metrics, mocked_responses, moc
 
     metrics = erddap_server_metrics._dataset_metrics_for_region(region)
 
-    assert 1285 == len(metrics)
+    # only 400 of the 1,285 have "realtime" data
+    assert 396 == len(metrics)
     humboldt_metric = next(m for m in metrics
                            if m.label_names[1] == 'dataset_id' and m.label_values[1] == 'edu_humboldt_tdp')
     assert 'erddap_dataset_time_since_latest_data' == humboldt_metric.name
