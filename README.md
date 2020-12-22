@@ -23,7 +23,8 @@ docker run --rm --name erddap-metrics \
 
 ## How it works
 
-A process runs periodically and scrapes the `/status.html` for each ERDDAP server, and publishes the results.
+A process runs periodically and scrapes information from `/status.html` (and optionally the All Datasets dataset)
+for each ERDDAP server, and publishes the results.
 
 You can configure a single metrics instance that inspects multiple ERDDAP servers.
 
@@ -34,6 +35,21 @@ The results are available via a REST API so you can integrate it into custom das
 ## Tutorial: setting up erddap-metrics with Prometheus and Grafana
 
 See tutorial in the docs: [Tutorial: setting up erddap-metrics with Prometheus and Grafana](https://github.com/axiom-data-science/erddap-metrics/blob/master/docs/tutorial.md)
+
+## Configuration (`settings.yml`)
+
+`erddap_regions` contains a list of ERDDAP servers you want to monitor.
+
+Each region has the following settings:
+
+* `name` -- human readable label, e.g., `"aoos"`
+* `base_url` -- root URL, e.g., `"http://erddap.aoos.org/erddap"`
+* `enable_dataset_metrics` -- whether or not to collect metrics for individual ERDDAP datasets
+    * set to `"true"` or `"false"` (default: `false`)
+* `dataset_metrics_max_age_seconds` -- how far back to collect individual metrics
+    * e.g., `604800` for the past 7 days
+    * for datasets old than this, the app won't track individual metrics
+    * generally, you only want to alert on active datasets going out of date, so there's no reason to monitor and store historic datasets, and limiting the number of metrics makes things more efficient
 
 ## Running locally
 
@@ -99,4 +115,3 @@ docker run --rm --name erddap-metrics \
   * External review
 * Features
   * Expose list of regions via rest api
-  * Per-dataset metrics (time since last data point, etc)

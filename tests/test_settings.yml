@@ -3,3 +3,5 @@
 erddap_regions:
   - name: testing
     base_url: 'https://testing.erddap.com/erddap'
+    enable_dataset_metrics: false
+    dataset_metrics_max_age_seconds: 1209600

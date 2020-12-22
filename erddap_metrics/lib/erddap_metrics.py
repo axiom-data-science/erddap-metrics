@@ -1,7 +1,6 @@
 #!python
 # coding=utf-8
 
-import logging
 import re
 from datetime import datetime
 from enum import Enum
@@ -10,8 +9,10 @@ from typing import List
 import yaml
 from apscheduler.schedulers.background import BackgroundScheduler
 
+from erddap_metrics import logger
 from erddap_metrics.lib import util
 from erddap_metrics.lib.singleton import Singleton
+from erddap_metrics.lib.util import str2bool
 
 
 class GaugeBool(Enum):
@@ -22,13 +23,16 @@ class GaugeBool(Enum):
 class ErddapGauge():
     """Erddap metric that maps to a Prometheus Gauge."""
 
-    def __init__(self, name, help_text, region, value):
+    def __init__(self, name, help_text, region, value, dataset_id=None):
         self.name = name
         self.help = help_text
         self.region = region
         self.metric_value = value
         self.label_names = ['region']
         self.label_values = [region]
+        if dataset_id:
+            self.label_names.append('dataset_id')
+            self.label_values.append(dataset_id)
 
     def __str__(self):
         return f"{self.name}[{self.region}] = {self.metric_value}"
@@ -47,6 +51,16 @@ class ErddapMetrics(metaclass=Singleton):
 
         # the list of ERDDAP servers to track
         self.regions_list = cfg['erddap_regions']
+        for r in self.regions_list:
+            if 'enable_dataset_metrics' not in r:
+                r['enable_dataset_metrics'] = False
+            else:
+                r['enable_dataset_metrics'] = str2bool(r['enable_dataset_metrics'])
+            if 'dataset_metrics_max_age_seconds' not in r:
+                r['dataset_metrics_max_age_seconds'] = 7 * 24 * 60 * 60  # 7 days
+            else:
+                r['dataset_metrics_max_age_seconds'] = int(r['dataset_metrics_max_age_seconds'])
+        logger.info(f"REGIONS: {self.regions_list}")
 
         self.metrics = []
 
@@ -65,13 +79,15 @@ class ErddapMetrics(metaclass=Singleton):
 
     def update_metrics(self):
         """Update metrics values."""
-        logging.info('Updating metrics')
+        logger.info('Updating metrics')
         metrics = []
         for region in self.regions_list:
             try:
                 metrics.extend(self._metrics_for_region(region))
+                if region['enable_dataset_metrics']:
+                    metrics.extend(self._dataset_metrics_for_region(region))
             except Exception:
-                logging.error(f"Could not load metrics for '{region['name']}'!")
+                logger.exception(f"Could not load metrics for '{region['name']}'!")
                 metrics.append(status_metric(region['name'], GaugeBool.DOWN))
         self.metrics = metrics
 
@@ -93,7 +109,7 @@ class ErddapMetrics(metaclass=Singleton):
         metrics = []
 
         region_name = region['name']
-        logging.debug(f"Updating {region_name}")
+        logger.debug(f"Updating {region_name}")
 
         url = f"{region['base_url']}/status.html"
         status_page_text = util.requests_get(url)
@@ -132,5 +148,35 @@ class ErddapMetrics(metaclass=Singleton):
                _first_result(r"Response Succeeded Time \(since last Daily Report\)\s+n =\s+(\d+)"))
             _m('erddap_server_num_recent_failed_responses', 'Number of failed responses since last Daily Report',
                _first_result(r"Response Failed\s+Time \(since last Daily Report\)\s+n =\s+(\d+)"))
+
+        return metrics
+
+    def _dataset_metrics_for_region(self, region) -> List[ErddapGauge]:
+        metrics = []
+
+        realtime_threshold = region['dataset_metrics_max_age_seconds']
+
+        region_name = region['name']
+        logger.debug(f"Updating dataset metrics for {region_name}")
+
+        url = f"{region['base_url']}/tabledap/allDatasets.csv?datasetID%2CmaxTime"
+        all_datasets_csv = util.requests_get(url, result_type='csv')
+
+        # convert the maxTime to seconds since last data point
+        now = util.now()
+        for d in all_datasets_csv:
+            dataset_id = d['datasetID']
+            try:
+                last_data_point_time = util.dt_from_utc_str(d['maxTime'])
+            except ValueError:
+                logger.debug(f"Failed to parse {d}")
+                continue
+            seconds_since_last_data_point = int((now - last_data_point_time).total_seconds())
+            if seconds_since_last_data_point < realtime_threshold:
+                metrics.append(ErddapGauge('erddap_dataset_time_since_latest_data',
+                                           'Number of seconds since the latest available data point for this dataset',
+                                           region_name,
+                                           seconds_since_last_data_point,
+                                           dataset_id=dataset_id))
 
         return metrics

@@ -2,6 +2,9 @@
 # coding=utf-8
 from pathlib import Path
 
+import pytest
+from dateutil import parser
+
 from tests import test_helper
 
 
@@ -83,6 +86,33 @@ def test_update_metrics__handles_error(erddap_server_metrics, mocked_responses):
     _assert_value(metrics, 'erddap_server_num_datasets', None)
     _assert_value(metrics, 'erddap_server_num_failed_load_datasets', None)
     _assert_value(metrics, 'erddap_server_mins_since_last_refresh', None)
+
+
+@pytest.fixture
+def mock_now_time(monkeypatch):
+    from erddap_metrics.lib import util
+    monkeypatch.setattr(util, 'now', lambda: parser.parse('2020-12-21T18:41:00Z'))
+
+
+def test_dataset_metrics_for_region(erddap_server_metrics, mocked_responses, mock_now_time):
+    # http://erddap.cencoos.org/erddap/tabledap/allDatasets.csv?datasetID%2CmaxTime
+    all_datasets_csv = _read_test_file('data/erddap_allDatasets_cencoos.csv')
+    test_helper._stub_request(mocked_responses, all_datasets_csv)
+
+    region = erddap_server_metrics.regions_list[0]
+
+    metrics = erddap_server_metrics._dataset_metrics_for_region(region)
+
+    # only 400 of the 1,285 have "realtime" data
+    assert 396 == len(metrics)
+    humboldt_metric = next(m for m in metrics
+                           if m.label_names[1] == 'dataset_id' and m.label_values[1] == 'edu_humboldt_tdp')
+    assert 'erddap_dataset_time_since_latest_data' == humboldt_metric.name
+    assert 'Number of seconds since the latest available data point for this dataset' == humboldt_metric.help
+    # last data pt: 2020-12-21T17:30:00Z
+    # current time: 2020-12-21T18:41:00Z
+    # 71 minutes / 4260 seconds
+    assert 4260 == humboldt_metric.metric_value
 
 
 def _assert_value(metrics, name, expected_value):

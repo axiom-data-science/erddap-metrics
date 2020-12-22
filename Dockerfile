@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:4.6.14
+FROM continuumio/miniconda3:4.9.2
 
 # Install requirements
 COPY requirements*.txt /tmp/
