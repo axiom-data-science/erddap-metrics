@@ -17,7 +17,12 @@ def requests_get(url, result_type='text'):
     """
     logger.debug(f'GET {url}')
 
-    response = requests.get(url, allow_redirects=True)
+    try:
+        response = requests.get(url, allow_redirects=True, timeout=30)
+    except requests.exceptions.Timeout:
+        message = f"GET {url}: Timed out"
+        logger.error(message)
+        raise requests.exceptions.HTTPError(message)
     if response.status_code != 200:
         message = f"GET {url}: HTTP {response.status_code}: {response.text}"
         logger.error(message)
