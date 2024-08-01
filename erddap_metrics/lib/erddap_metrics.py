@@ -4,7 +4,7 @@
 import re
 from datetime import datetime
 from enum import Enum
-from typing import List
+from typing import List, Optional
 
 import yaml
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -116,8 +116,13 @@ class ErddapMetrics(metaclass=Singleton):
 
         metrics.append(status_metric(region_name, GaugeBool.UP))
 
-        def _first_result(pattern):
-            return int(re.findall(pattern, status_page_text)[0])
+        def _first_result(pattern: str, default: Optional[int] = None) -> int:
+            """Closure to return first match of the pattern in the status_page_text variable."""
+            if (match := re.findall(pattern, status_page_text)):
+                return int(match[0])
+            elif default is not None:
+                return default
+            raise ValueError("No pattern match for '{pattern}' was identified, and no default was provided.")
 
         def _m(name, help_text, value):
             metrics.append(ErddapGauge(name, help_text, region_name, value))
@@ -142,7 +147,7 @@ class ErddapMetrics(metaclass=Singleton):
         if num_total_datasets > 0:
             _m('erddap_server_num_failed_load_datasets',
                'Total number of table datasets that failed to load (n Datasets Failed To Load)',
-               _first_result(r"n Datasets Failed To Load \(in the last major LoadDatasets\) = (\d+)"))
+               _first_result(r"n Datasets Failed To Load \(in the last major LoadDatasets\) = (\d+)", 0))
 
             _m('erddap_server_num_recent_success_responses', 'Number of successful responses since last Daily Report',
                _first_result(r"Response Succeeded Time \(since last Daily Report\)\s+n =\s+(\d+)"))
