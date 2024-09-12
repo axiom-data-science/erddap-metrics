@@ -147,7 +147,7 @@ class ErddapMetrics(metaclass=Singleton):
         if num_total_datasets > 0:
             _m('erddap_server_num_failed_load_datasets',
                'Total number of table datasets that failed to load (n Datasets Failed To Load)',
-               _first_result(r"n Datasets Failed To Load \(in the last major LoadDatasets\) = (\d+)", 0))
+               _first_result(r"n Datasets Failed To Load \(in the last major LoadDatasets\) = (\d+)", -1))
 
             _m('erddap_server_num_recent_success_responses', 'Number of successful responses since last Daily Report',
                _first_result(r"Response Succeeded Time \(since last Daily Report\)\s+n =\s+(\d+)"))
